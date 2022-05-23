@@ -1,0 +1,42 @@
+SECTION=>2
+
+QUESTION => 1
+
+SOLUTION =>
+
+delimiter //
+create procedure PROC1(string1 varchar(50),string2 varchar(50))
+begin
+declare result boolean ;
+if(instr(string1,string2))
+then
+insert into tempp values('contain substring');
+else
+insert into tempp values('not contain sunstring');
+end if;
+end;
+//
+delimiter ;
+
+call PROC1('DAC','CDAC');
+
+
+QUESTUON =>2
+
+delimiter //
+	create function FUNC1(a int,b int,c int)
+	returns int
+	deterministic
+begin
+	declare result boolean;
+	if(c<(a+b) || a<(b+c) || b<(c+a))
+then
+	set result = 'true';
+	return result;
+else
+	set result = 'false';
+	return result;
+	end if;
+	end;
+	//
+delimiter ;

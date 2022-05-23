@@ -1,0 +1,39 @@
+SECTION - 1
+
+Write SELECT statements to achieve the following:-
+
+3. Display all the employees where SAL between 2500 and 5000 (inclusive of both)
+
+STATEMENT => select * from EMP where SAL between 2500 and 5000;
+
+4. Display all the ENAMEs in descending order of ENAME.
+
+STATEMENT => select ENAME from emp order by ENAME desc;
+
+5. Display all the JOBs in lowercase
+
+STATEMENT => select lower(JOB) from EMP;
+
+6. Display the ENAMEs and the lengths of the ENAMEs.
+
+STATEMENT => select ENAME,length(ENAME)"LENGTH" from EMP;
+
+7. Display the DEPTNO and the count of employees who belong to that DEPTNO
+
+STATEMENT => select DEPTNO,count(EMPNO) from EMP group by DEPTNO;
+
+8. Display the DNAMEs and the ENAMEs who belong to that DNAME
+
+STATEMENT => select DEPT.DNAME,EMP.ENAME FROM EMP,DEPT
+	     where
+	     DEPT.DEPTNO = EMP.DEPTNO;
+9. Display the position at which the string ‘AR’ occurs in the ename.
+
+STATEMENT => select ENAME from EMP where ENAME like '%AR%';
+
+10. Display the HRA for each employee given that HRA is 20% of SAL.
+
+STATEMENT => select SAL*0.2"HRA" from EMP;
+
+
+
